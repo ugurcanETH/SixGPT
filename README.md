@@ -5,7 +5,7 @@ Bu rehber, SixGPT projesi için bir miner kurulumu yaparken izlenecek adımları
 
 - Ubuntu 20.04 veya üstü bir Linux sunucu. Ben hem Volara hem de SixGPT aynı sunucuda çalıştırıyorum, sunucu Hetzner CX32.
 - Vana cüzdanı oluşturun ya da mevcut Vana cüzdanınıza minimum 0.1 $VANA atın. (Ben 0.5 $VANA attım, uzunca süre yetecektir.)
-- https://sixgpt.xyz sitesine girerek oluşturduğunuz cüzdanınızı bağlayın. **Not: Kurulumdan önce muhakkak bu işlemi gerçekleştirin.**
+- https://sixgpt.xyz sitesine girerek oluşturduğunuz cüzdanınızı bağlayın. Daha sonra Gmail hesabınızı bağlamanızı isteyecek, gerekli işlemi de yaparak Gmail hesabınızı bağlayın. Bununla birlikte yeni bir Gmail hesabı açtım burada kullanmak için. **Not: Kurulumdan önce muhakkak bu işlemi gerçekleştirin.**
 
 # Kurulum Kodları
 
@@ -108,7 +108,7 @@ VANA_NETWORK=mainnet
 OLLAMA_API_URL=http://ollama:11434/api
 ```
 
-Daha sonra CTRL + C yapın Y + ENTER yaparak dosyayı kaydedip kapatın.
+Daha sonra CTRL + X yapın Y + ENTER yaparak dosyayı kaydedip kapatın.
 
 **7. Docker ile Miner Çalıştırmaya Başlayın**
 
