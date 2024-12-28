@@ -150,3 +150,4 @@ screen -r xxxx
 ```
 
 Ekranı tekrar kapatmak için CTRL + A + D kombinasyonunu kullanın.
+Log ekranını kapatmak için CTRL + C kombinasyonunu kullanın.
