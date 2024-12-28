@@ -113,25 +113,25 @@ Daha sonra CTRL + X yapın Y + ENTER yaparak dosyayı kaydedip kapatın.
 **7. Docker ile Miner Çalıştırmaya Başlayın**
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 **8. Miner Loglarını Görüntüleyin**
 
 ```bash
-docker-compose logs -f
+docker compose logs -f
 ```
 
 Kurulumu Screen ile yaptığımız için bu aşamadan sonra CTRL + A + D basarak ekranı kapatabilirsiniz. Arka planda çalışmaya devam edecektir. Eğer durdurup tekrar çalıştırmanız gerekirse aşağıdaki kodları kodları kullanabilirsiniz.
 
 Durdurmak İçin
 ```bash
-docker-compose down
+docker compose down
 ```
 
 Tekrar Çalıştırmak İçin
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 **9. Logları Kontrol Etmeniz Gerekirse**
