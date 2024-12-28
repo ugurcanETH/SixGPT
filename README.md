@@ -23,19 +23,61 @@ sudo apt install curl wget git screen build-essential -y
 
 **3. Docker Kurulumunu Gerçekleştirin**
 
+Ubuntu sunucunuza Docker ve Docker Compose kurulumu için gerekli komutları paylaşıyorum:
+
+1. Önce eski Docker sürümlerini kaldıralım (eğer varsa):
 ```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-sudo add-apt-repository "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu focal stable"
-sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io -y
+sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
-Docker Compose kurmak için:
+2. Gerekli paketleri yükleyelim:
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg lsb-release
 ```
+
+3. Docker'ın GPG anahtarını ekleyelim:
+```bash
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+4. Docker repository'sini ekleyelim:
+```bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+5. Docker Engine'i yükleyelim:
+```bash
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+6. Docker Compose'u yükleyelim:
+```bash
+sudo apt-get update
+sudo apt-get install docker-compose-plugin
+```
+
+7. Docker'ın düzgün çalıştığını kontrol edelim:
+```bash
+sudo docker run hello-world
+```
+
+8. (Opsiyonel) Docker'ı sudo olmadan kullanabilmek için kullanıcınızı docker grubuna ekleyin:
+```bash
+sudo usermod -aG docker $USER
+```
+Bu komutu çalıştırdıktan sonra oturumu kapatıp tekrar açmanız gerekecektir.
+
+9. Docker ve Docker Compose versiyonlarını kontrol edebilirsiniz:
+```bash
+docker --version
+docker compose version
+```
+
+Bu komutları sırasıyla çalıştırdığınızda Docker ve Docker Compose sisteminize kurulmuş olacaktır. Herhangi bir sorunla karşılaşırsanız belirtebilirsiniz.
+
 
 **4. Arka Planda Çalıştırmak İçin Screen Açın**
 
