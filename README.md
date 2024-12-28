@@ -143,7 +143,7 @@ screen -ls
 
 Çıktıların içinde 
 xxxx.sixgpt (xx/xx/xxxx xx:xx:xx AM/PM)    (Detached)
-Şeklinde bir çıktı göreceksiniz. Baştaki 4 haneli rakamı aşağıdaki kodun devamına yazın.
+Şeklinde bir çıktı göreceksiniz. Baştaki 4 haneli rakamı aşağıdaki xxxx kısmına yazın.
 
 ```bash
 screen -r xxxx
